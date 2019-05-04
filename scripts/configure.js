@@ -134,6 +134,7 @@ function scriptText(osName, lldbExe) {
   }
 
   return `#!/usr/bin/env node
+\'use strict\';
 
 const child_process = require('child_process');
 const fs = require('fs');
