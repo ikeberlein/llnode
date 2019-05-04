@@ -9,7 +9,10 @@ function main() {
   const buildDir = process.cwd();
   console.log('Build dir is: ' + buildDir);
   const osName = os.type();
-  const { config, executable } = configureInstallation(osName, buildDir);
+  const instCfg = configureInstallation(osName, buildDir);
+  const config = instCfg.config;
+  const executable = instCfg.executable;
+  
   configureBuildOptions(config);
   writeConfig(config);
   writeLlnodeScript(buildDir, executable, osName);
